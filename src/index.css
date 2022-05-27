@@ -1,0 +1,75 @@
+body {
+  background-color: #ff927b !important;
+}
+.index_wrap {
+  margin: 150px 0 100px;
+}
+.index_wrap .image {
+  height: 400px;
+  padding: 0;
+}
+@media screen and (max-width: 720px) {
+  .index_wrap .image {
+    height: 300px;
+    text-align: center;
+  }
+  .index_wrap .image img {
+    float: none !important;
+  }
+}
+.index_wrap .image img {
+  height: 100%;
+  float: right;
+}
+.index_wrap .detail_wrap {
+  font-family: "HK Grotesk";
+  font-size: 24px;
+}
+@media screen and (min-width: 721px) {
+  .index_wrap .detail_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -60px;
+    margin-top: -10px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .index_wrap .detail_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -25px;
+  }
+  .index_wrap .detail_wrap .title_wrap {
+    width: 310px;
+  }
+}
+.index_wrap .detail_wrap .title_wrap h2 {
+  font-weight: bold;
+}
+.index_wrap .detail_wrap .title_wrap p {
+  padding-top: 10px;
+}
+.index_wrap .detail_wrap button {
+  width: 150px;
+  height: 50px;
+  border-radius: 35px;
+  border: 0;
+  background-color: #bbb;
+  font-size: 26px;
+  font-weight: 500;
+}
+@media screen and (min-width: 721px) {
+  .index_wrap .detail_wrap button {
+    margin-left: 80px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .index_wrap .detail_wrap button {
+    margin-top: 60px;
+  }
+}
+.index_wrap .detail_wrap button:hover {
+  background-color: #a49e96;
+}

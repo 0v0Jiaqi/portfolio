@@ -1,0 +1,95 @@
+body {
+  font-family: "HK Grotesk";
+  padding: 0;
+  margin: 0;
+  background-color: #EAEAEA;
+}
+a {
+  text-decoration: none;
+  /* 去除默认的下划线 */
+  color: #fff;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.header {
+  background-color: #ff927b;
+  display: flex;
+  padding: 0 200px;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 720px) {
+  .header {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAEAEA;
+  }
+}
+.header .music {
+  background-color: #ffb6a7;
+  padding: 5px;
+  border-radius: 5px;
+}
+.header .music .music_title {
+  background-color: #fff;
+  height: 30px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  line-height: 30px;
+}
+.header .music .music_op_wrap {
+  display: flex;
+  padding: 5px 40px 2px 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+.header .music .music_op_wrap > div {
+  width: 25px;
+  height: 25px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.header .music .music_op_wrap .music_reload {
+  background-image: url(assets/icons/music/Vector.png);
+  width: 20px;
+  height: 20px;
+}
+.header .music .music_op_wrap .music_pre {
+  background-image: url(assets/icons/music/VectorPre.png);
+  background-position: right 0px;
+}
+.header .music .music_op_wrap .music_play {
+  height: 30px;
+  width: 30px;
+  background-image: url(assets/icons/music/Play.png);
+}
+.header .music .music_op_wrap .music_next {
+  background-image: url(assets/icons/music/VectorNext.png);
+}
+@media screen and (max-width: 720px) {
+  .header .ul_wrap {
+    display: none;
+  }
+}
+.header .ul_wrap ul {
+  display: flex;
+}
+.header .ul_wrap ul li {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.header .ul_wrap ul .clicked {
+  background-color: #e94958;
+}
