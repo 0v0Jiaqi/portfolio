@@ -110,3 +110,70 @@
 .card_wrap .task_wrap3 .task_card_wrap {
   background-color: #b8807e;
 }
+.clock_wrap {
+  padding: 40px 0;
+}
+.clock_wrap .clock {
+  background-color: #ff927b;
+  padding: 20px;
+  border-radius: 10px;
+}
+.clock_wrap .clock .clock_time {
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 70px;
+  text-align: center;
+}
+@media screen and (max-width: 720px) {
+  .clock_wrap .clock .clock_time {
+    padding: 10px 0px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .clock_wrap .clock .clock_time {
+    padding: 30px 50px;
+  }
+}
+.clock_wrap .clock .clock_op_wrap {
+  padding: 5px;
+  padding-top: 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.clock_wrap .clock .clock_op_wrap > div {
+  background-color: pink;
+  height: 50px;
+  width: 50px;
+}
+.clock_wrap .clock .clock_op_wrap > .clock_start {
+  height: 60px;
+  width: 60px;
+}
+.clock_wrap .note_wrap {
+  background-color: #ff927b;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 720px) {
+  .clock_wrap .note_wrap {
+    margin-top: 20px;
+  }
+}
+.clock_wrap .note_wrap .note_input {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.clock_wrap .note_wrap .note_input textarea {
+  border: none;
+  outline: none;
+  /*边线不显示*/
+  resize: none;
+  /*禁止拉伸*/
+  height: 192px;
+  appearance: none;
+}

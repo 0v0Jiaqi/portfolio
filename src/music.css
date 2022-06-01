@@ -44,6 +44,15 @@ li {
     background-repeat: no-repeat;
     background-position: center;
   }
+  .mobile_wrap .menu_wrap .collection_icon {
+    margin-right: 10px;
+    height: 30px;
+    background-color: #ff927b;
+    border-radius: 5px;
+    color: #666;
+    padding: 0 5px;
+    line-height: 30px;
+  }
 }
 .header {
   background-color: #ff927b;
