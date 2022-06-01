@@ -127,7 +127,6 @@ li {
   margin: 0 10px;
   border-radius: 20px;
   color: #fff;
-  cursor: pointer;
 }
 .header .ul_wrap ul .clicked {
   background-color: #e94958;

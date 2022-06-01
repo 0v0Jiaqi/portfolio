@@ -136,7 +136,14 @@
 
 .clock_wrap {
   // background-color: pink;
-  padding: 40px 0;
+  @media screen and (max-width: 720px) {
+    padding: 40px 20px;
+  }
+
+  @media screen and (min-width: 721px) {
+    padding: 40px 140px;
+  }
+
   // display: flex;
   // justify-content: space-around;
   // align-items: center;
@@ -169,14 +176,26 @@
       justify-content: space-around;
 
       & > div {
-        background-color: pink;
+        // background-color: pink;
         height: 50px;
         width: 50px;
+        background-image: url(./assets/icons/clock/start.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        cursor: pointer;
+      }
+
+      & > .clock_next {
+        background-image: url(./assets/icons/clock/next.png);
       }
 
       & > .clock_start {
         height: 60px;
         width: 60px;
+      }
+
+      & > .clock_setting {
+        background-image: url(./assets/icons/clock/setting.png);
       }
     }
   }

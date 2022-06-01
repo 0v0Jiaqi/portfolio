@@ -8,6 +8,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="./music.css">
+  <link rel="stylesheet" href="./collection.css">
 </head>
 
 <body>
@@ -46,7 +47,78 @@
       </ul>
     </div>
   </div>
-  <h1>collection</h1>
+  <audio class="music_source" src="./assets/songs/Dancing With Our Hands Tied.m4a"></audio>
+
+  <div class="collection_wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-12">
+          <div class="category_wrap">
+            <div class="category_header">Category</div>
+            <ul class="category_list">
+              <li class="clicked">guitar score</li>
+              <li>video</li>
+              <li>Performance</li>
+            </ul>
+            <div class="category_add">
+              <img src="./assets/icons/category_add.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-12">
+          <div class="collection_list_wrap">
+            <div class="collection_list">
+              <div class="collection_list_content">collection_list_content</div>
+              <div><img src="./assets/icons/collection_setting.png" alt=""></div>
+              <div><img src="./assets/icons/collection_delete.png" alt=""></div>
+            </div>
+            <div class="collection_list">
+              <div class="collection_list_content">collection_list_content</div>
+              <div><img src="./assets/icons/collection_setting.png" alt=""></div>
+              <div><img src="./assets/icons/collection_delete.png" alt=""></div>
+            </div>
+          </div>
+          <div class="collection_list_add">
+            <img src="./assets/icons/collection_add.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collection_add_wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-11 col-lg-10">
+          <div class="back"><img src="./assets/icons/collection_back2.png" alt="back"></div>
+          <div class="collection_input_wrap">
+            <div>
+              <label for="title">Title</label>
+              <input type="text" name="title" id="input_title">
+            </div>
+            <div>
+              <label for="category">Category</label>
+              <input type="text" name="category" disabled="true" value="test">
+            </div>
+            <div>
+              <label for="url">URL</label>
+              <input type="text" name="url" id="input_url">
+            </div>
+            <div class="notes_wrap">
+              <label for="notes">Notes</label>
+              <textarea name="notes" id="input_notes"></textarea>
+            </div>
+          </div>
+          <div class="collection_save_wrap">
+            <div class="collection_save">
+              <img src="./assets/icons/collection_save.png" alt="">
+              Save
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>

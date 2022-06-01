@@ -1,0 +1,184 @@
+.clicked {
+  color: #e94958 !important;
+}
+@media screen and (max-width: 720px) {
+  .collection_wrap {
+    padding-top: 10px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .collection_wrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.collection_wrap .category_wrap {
+  margin: 0 auto;
+  background-color: #a49e96;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+@media screen and (max-width: 720px) {
+  .collection_wrap .category_wrap {
+    max-width: 260px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .collection_wrap .category_wrap {
+    min-height: 250px;
+    max-width: 150px;
+  }
+}
+.collection_wrap .category_wrap .category_header {
+  color: #000;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+  padding: 0 0 5px;
+  margin: 0px 20px;
+}
+.collection_wrap .category_wrap .category_list li {
+  padding-top: 10px;
+  color: #fff;
+}
+.collection_wrap .category_wrap .category_add {
+  height: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.collection_wrap .category_wrap .category_add img {
+  height: 100%;
+}
+.collection_wrap .collection_list_wrap .collection_list {
+  display: flex;
+  margin: 0 auto;
+}
+@media screen and (max-width: 720px) {
+  .collection_wrap .collection_list_wrap .collection_list {
+    max-width: 300px;
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .collection_wrap .collection_list_wrap .collection_list {
+    padding-bottom: 20px;
+  }
+}
+.collection_wrap .collection_list_wrap .collection_list .collection_list_content {
+  height: 40px;
+  flex: 1;
+  padding: 5px 20px;
+  background-color: #dbdbdc;
+  border-radius: 20px;
+  line-height: 28px;
+}
+.collection_wrap .collection_list_wrap .collection_list img {
+  height: 30px;
+  padding-left: 20px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.collection_wrap .collection_list_add {
+  height: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+.collection_wrap .collection_list_add img {
+  height: 100%;
+  cursor: pointer;
+}
+@media screen and (max-width: 720px) {
+  .collection_add_wrap {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .collection_add_wrap .back {
+    padding-left: 20px;
+  }
+  .collection_add_wrap input {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 721px) {
+  .collection_add_wrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 150px;
+  }
+}
+.collection_add_wrap .back {
+  height: 30px;
+}
+.collection_add_wrap .back img {
+  height: 100%;
+  cursor: pointer;
+}
+.collection_add_wrap .collection_input_wrap {
+  margin-top: 30px;
+}
+.collection_add_wrap .collection_input_wrap > div {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.collection_add_wrap .collection_input_wrap > div input {
+  height: 40px;
+  padding-left: 10px;
+}
+.collection_add_wrap .collection_input_wrap .notes_wrap {
+  align-items: start;
+}
+.collection_add_wrap .collection_input_wrap #input_title,
+.collection_add_wrap .collection_input_wrap #input_url {
+  flex: 1;
+}
+.collection_add_wrap .collection_input_wrap textarea {
+  flex: 1;
+  padding: 10px;
+}
+@media screen and (max-width: 720px) {
+  .collection_add_wrap .collection_input_wrap textarea {
+    height: 100px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .collection_add_wrap .collection_input_wrap textarea {
+    height: 200px;
+  }
+}
+.collection_add_wrap .collection_input_wrap label {
+  width: 100px;
+  text-align: right;
+  padding-right: 20px;
+}
+.collection_add_wrap .collection_input_wrap textarea,
+.collection_add_wrap .collection_input_wrap input {
+  border: 1px solid #ccc;
+  outline: none;
+  /*边线不显示*/
+  resize: none;
+  /*禁止拉伸*/
+  appearance: none;
+  border-radius: 10px;
+}
+.collection_add_wrap .collection_save_wrap {
+  margin-top: 30px;
+}
+.collection_add_wrap .collection_save_wrap .collection_save {
+  margin: 0 auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e94958;
+  width: 120px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.collection_add_wrap .collection_save_wrap .collection_save img {
+  height: 20px;
+  margin-right: 10px;
+}
