@@ -49,6 +49,7 @@ document.querySelector(".music_next").onclick = function () {
   musicTitle.innerHTML = musicList[musicIndex]
   musicTitle.start()
   musicSource.play()
+  document.querySelector(".music_play").style.backgroundImage = "url(./assets/icons/music/pause.png)"
 }
 
 document.querySelector(".music_pre").onclick = function () {
@@ -65,10 +66,14 @@ document.querySelector(".music_pre").onclick = function () {
   musicTitle.innerHTML = musicList[musicIndex]
   musicTitle.start()
   musicSource.play()
+  document.querySelector(".music_play").style.backgroundImage = "url(./assets/icons/music/pause.png)"
 }
 
 document.querySelector(".music_reload").onclick = function () {
+  musicTitle.stop()
   musicSource.pause()
   musicSource.src = "./assets/songs/" + musicList[musicIndex]
   musicSource.play()
+  musicTitle.start()
+  document.querySelector(".music_play").style.backgroundImage = "url(./assets/icons/music/pause.png)"
 }

@@ -2,11 +2,16 @@ body {
   font-family: "HK Grotesk";
   padding: 0;
   margin: 0;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 
 a {
   text-decoration: none; /* 去除默认的下划线 */
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
   color: #fff;
 }
 
@@ -15,6 +20,37 @@ li {
   list-style: none;
   padding: 0px;
   margin: 0px;
+}
+
+.mobile_wrap {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .mobile_wrap {
+    display: block;
+    // background-color: #ff927b;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    .menu_wrap {
+      width: 310px;
+      // float: right;
+      display: flex;
+      justify-content: right;
+
+      .menu_icon {
+        width: 30px;
+        height: 30px;
+        background-color: #ff927b;
+        border-radius: 5px;
+        background-image: url(./assets/icons/home.png);
+        background-size: auto 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
 }
 
 .header {
@@ -26,7 +62,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #EAEAEA;
+    background-color: #eaeaea;
   }
   padding: 0 200px;
   height: 100px;

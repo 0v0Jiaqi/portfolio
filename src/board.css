@@ -1,0 +1,112 @@
+.card_wrap {
+  padding-top: 40px;
+}
+@media screen and (max-width: 720px) {
+  .card_wrap {
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 721px) {
+  .card_wrap {
+    padding: 40px 160px;
+  }
+}
+.card_wrap .task_wrap {
+  padding: 0 20px;
+  padding-bottom: 40px;
+}
+.card_wrap .task_wrap .task_card_title {
+  background-color: #ff927b;
+  text-align: center;
+  padding: 10px 0px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+.card_wrap .task_wrap .task_card_wrap {
+  background-color: #ff927b;
+  border-radius: 10px;
+  padding: 15px 10px;
+  min-height: 500px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_add_wrap {
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.card_wrap .task_wrap .task_card_wrap .task_add_wrap img {
+  height: 35px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list {
+  background-color: #fff;
+  border-radius: 100px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_delete {
+  width: 25px;
+  height: 25px;
+  background-image: url(assets/icons/task_delete.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details {
+  font-size: 12px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details > div {
+  margin-bottom: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details > div:last-child {
+  margin-bottom: 0;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details input {
+  height: 18px;
+  width: 100px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details #time_h,
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details #time_m {
+  width: 34px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_done {
+  width: 30px;
+  height: 30px;
+  background-image: url(assets/icons/task_done2.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #bbbbbb;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_done:hover {
+  background-color: #a49e96;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_edit {
+  background-image: url(assets/icons/task_edit2.png);
+  background-size: 70% 70%;
+  background-position: center;
+}
+.card_wrap .task_wrap2 .task_card_title {
+  background-color: #e94958;
+}
+.card_wrap .task_wrap2 .task_card_wrap {
+  background-color: #e94958;
+}
+.card_wrap .task_wrap3 .task_card_title {
+  background-color: #b8807e;
+}
+.card_wrap .task_wrap3 .task_card_wrap {
+  background-color: #b8807e;
+}
