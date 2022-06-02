@@ -54,27 +54,10 @@
         <div class="col-lg-4 col-12">
           <div class="task_wrap task_wrap1">
             <div class="task_card_title">To Do</div>
+            <div class="task_card_index">0</div>
             <div class="task_card_wrap">
               <div class="task_list_wrap">
-                <div class="task_list" draggable="true">
-                  <div class="task_list_delete"></div>
-                  <div class="task_list_details">
-                    <div>name: <input id="text" type="text" name="text"></div>
-                    <div>date: <input id="date" type="date" name="date"></div>
-                    <div>time: <input id="time_h" type="number" name="time_h">h <input id="time_m" type="number"
-                        name="time_m">m</div>
-                  </div>
-                  <div class="task_list_done"></div>
-                </div>
-                <div class="task_list" draggable="true">
-                  <div class="task_list_delete"></div>
-                  <div class="task_list_details">
-                    <div>Music theory knowledge</div>
-                    <div>DUE DAY: 28 May 2022</div>
-                    <div>Estimated time: 168 hours</div>
-                  </div>
-                  <div class="task_list_done task_list_edit"></div>
-                </div>
+
               </div>
               <div class="task_add_wrap">
                 <img src="./assets/icons/task_add.png" alt="">
@@ -85,19 +68,9 @@
         <div class="col-lg-4 col-12">
           <div class="task_wrap task_wrap2">
             <div class="task_card_title">In Progress</div>
+            <div class="task_card_index">1</div>
             <div class="task_card_wrap">
               <div class="task_list_wrap">
-                <div class="task_list" draggable="true">
-                  <div class="task_list_delete"></div>
-                  <div class="task_list_details">
-                    <div>name: <input id="text" type="text" name="text"></div>
-                    <div>date: <input id="date" type="date" name="date"></div>
-                    <div>time: <input id="time_h" type="number" name="time_h">h
-                      <input id="time_m" type="number" name="time_m">m
-                    </div>
-                  </div>
-                  <div class="task_list_done"></div>
-                </div>
 
               </div>
               <div class="task_add_wrap">
@@ -109,19 +82,9 @@
         <div class="col-lg-4 col-12">
           <div class="task_wrap task_wrap3">
             <div class="task_card_title">Done</div>
+            <div class="task_card_index">2</div>
             <div class="task_card_wrap">
               <div class="task_list_wrap">
-                <div class="task_list" draggable="true">
-                  <div class="task_list_delete"></div>
-                  <div class="task_list_details">
-                    <div>name: <input id="text" type="text" name="text"></div>
-                    <div>date: <input id="date" type="date" name="date"></div>
-                    <div>time: <input id="time_h" type="number" name="time_h">h
-                      <input id="time_m" type="number" name="time_m">m
-                    </div>
-                  </div>
-                  <div class="task_list_done"></div>
-                </div>
 
               </div>
               <div class="task_add_wrap">
@@ -134,11 +97,40 @@
     </div>
   </div>
 
-  <div class="clock_wrap">
+  <div class="task_list copy">
+    <div class="task_index">-1</div>
+    <div class="task_list_delete"></div>
+    <div class="task_list_details">
+      <div class="first_details">name: <input id="text" type="text" name="text"></div>
+      <div class="second_details">date: <input id="date" type="date" name="date"></div>
+      <div class="third_details">time: <input id="time_h" type="number" name="time_h" min="0">h
+        <input id="time_m" type="number" name="time_m" max="59" min="0">m
+      </div>
+    </div>
+    <div class="task_list_done" id="task_list_done"></div>
+  </div>
+
+  <div class="task_list copy2" draggable="true">
+    <div class="task_index">-1</div>
+    <div class="task_list_delete"></div>
+    <div class="task_list_details">
+      <div class="first_details details_title">Music theory knowledge</div>
+      <div class="second_details">DUE DAY: 28 May 2022</div>
+      <div class="third_details">Estimated time: 16h 58min</div>
+    </div>
+    <div class="task_list_done task_list_edit" id="task_list_edit"></div>
+  </div>
+
+  <div class="clock_wrap" style="display: none;">
+    <div class="back"><img src="./assets/icons/collection_back2.png" alt="back" id="clock_back"></div>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-12">
           <div class="clock">
+            <div class="time_setting">
+              time setting
+            </div>
             <div class="clock_time">
               25:00
             </div>

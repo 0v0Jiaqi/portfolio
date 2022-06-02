@@ -1,3 +1,11 @@
+.copy,
+.copy2 {
+  display: none;
+}
+.task_card_index,
+.task_index {
+  display: none;
+}
 .card_wrap {
   padding-top: 40px;
 }
@@ -28,7 +36,7 @@
 .card_wrap .task_wrap .task_card_wrap {
   background-color: #ff927b;
   border-radius: 10px;
-  padding: 15px 10px;
+  padding: 0px 10px 15px;
   min-height: 500px;
 }
 .card_wrap .task_wrap .task_card_wrap .task_add_wrap {
@@ -41,6 +49,9 @@
 }
 .card_wrap .task_wrap .task_card_wrap .task_add_wrap img {
   height: 35px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap {
+  padding-top: 15px;
 }
 .card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list {
   background-color: #fff;
@@ -61,6 +72,9 @@
 }
 .card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details {
   font-size: 12px;
+}
+.card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details .details_title {
+  font-weight: 700;
 }
 .card_wrap .task_wrap .task_card_wrap .task_list_wrap .task_list .task_list_details > div {
   margin-bottom: 5px;
@@ -110,9 +124,27 @@
 .card_wrap .task_wrap3 .task_card_wrap {
   background-color: #b8807e;
 }
+.clock_wrap .back {
+  height: 30px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 720px) {
+  .clock_wrap .back {
+    padding-left: 10px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .clock_wrap .back {
+    padding-left: 20px;
+  }
+}
+.clock_wrap .back img {
+  height: 100%;
+  cursor: pointer;
+}
 @media screen and (max-width: 720px) {
   .clock_wrap {
-    padding: 40px 20px;
+    padding: 10px 20px 40px;
   }
 }
 @media screen and (min-width: 721px) {
@@ -124,6 +156,7 @@
   background-color: #ff927b;
   padding: 20px;
   border-radius: 10px;
+  position: relative;
 }
 .clock_wrap .clock .clock_time {
   background-color: #fff;
@@ -166,6 +199,11 @@
 }
 .clock_wrap .clock .clock_op_wrap > .clock_setting {
   background-image: url(assets/icons/clock/setting.png);
+}
+.clock_wrap .clock .time_setting {
+  display: none;
+  position: absolute;
+  background-color: blue;
 }
 .clock_wrap .note_wrap {
   background-color: #ff927b;

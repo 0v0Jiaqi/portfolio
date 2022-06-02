@@ -1,3 +1,13 @@
+.copy,
+.copy2 {
+  display: none;
+}
+
+.task_card_index,
+.task_index {
+  display: none;
+}
+
 .card_wrap {
   // display: none;
   padding-top: 40px;
@@ -25,7 +35,7 @@
     .task_card_wrap {
       background-color: #ff927b;
       border-radius: 10px;
-      padding: 15px 10px;
+      padding: 0px 10px 15px;
       min-height: 500px;
 
       .task_add_wrap {
@@ -43,6 +53,7 @@
       }
 
       .task_list_wrap {
+        padding-top: 15px;
         .task_list {
           background-color: #fff;
           // height: 60px;
@@ -64,6 +75,11 @@
 
           .task_list_details {
             font-size: 12px;
+
+            .details_title {
+              font-weight: 700;
+            }
+
             & > div {
               margin-bottom: 5px;
               text-align: center;
@@ -135,9 +151,24 @@
 }
 
 .clock_wrap {
+  .back {
+    height: 30px;
+    margin-bottom: 10px;
+    @media screen and (max-width: 720px) {
+      padding-left: 10px;
+    }
+    @media screen and (min-width: 721px) {
+      padding-left: 20px;
+    }
+
+    img {
+      height: 100%;
+      cursor: pointer;
+    }
+  }
   // background-color: pink;
   @media screen and (max-width: 720px) {
-    padding: 40px 20px;
+    padding: 10px 20px 40px;
   }
 
   @media screen and (min-width: 721px) {
@@ -152,6 +183,7 @@
     background-color: #ff927b;
     padding: 20px;
     border-radius: 10px;
+    position: relative;
 
     .clock_time {
       background-color: #fff;
@@ -197,6 +229,12 @@
       & > .clock_setting {
         background-image: url(./assets/icons/clock/setting.png);
       }
+    }
+
+    .time_setting {
+      display: none;
+      position: absolute;
+      background-color: blue;
     }
   }
 

@@ -55,42 +55,37 @@
         <div class="col-lg-3 col-12">
           <div class="category_wrap">
             <div class="category_header">Category</div>
+            <li class="copy" index="-1"><input type="text"></li>
             <ul class="category_list">
-              <li class="clicked">guitar score</li>
-              <li>video</li>
-              <li>Performance</li>
+              <li class="clicked copy2" index="0"> default</li>
             </ul>
             <div class="category_add">
-              <img src="./assets/icons/category_add.png" alt="">
+              <img src="./assets/icons/category_add.png" alt="" id="category_add">
             </div>
           </div>
         </div>
         <div class="col-lg-8 col-12">
           <div class="collection_list_wrap">
-            <div class="collection_list">
-              <div class="collection_list_content">collection_list_content</div>
-              <div><img src="./assets/icons/collection_setting.png" alt=""></div>
-              <div><img src="./assets/icons/collection_delete.png" alt=""></div>
-            </div>
-            <div class="collection_list">
-              <div class="collection_list_content">collection_list_content</div>
-              <div><img src="./assets/icons/collection_setting.png" alt=""></div>
-              <div><img src="./assets/icons/collection_delete.png" alt=""></div>
+            <div class="collection_list copy3">
+              <div class="collection_list_index" style="display: none;">-1</div>
+              <div class="collection_list_content"><a href="">collection_list_content</a></div>
+              <div><img src="./assets/icons/collection_setting.png" alt="" id="collection_list_setting"></div>
+              <div><img src="./assets/icons/collection_delete.png" alt="" id="collection_list_delete"></div>
             </div>
           </div>
           <div class="collection_list_add">
-            <img src="./assets/icons/collection_add.png" alt="">
+            <img src="./assets/icons/collection_add.png" alt="" id="collection_list_add">
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="collection_add_wrap">
+  <div class="collection_add_wrap" style="display: none;">
     <div class="container">
       <div class="row">
         <div class="col-11 col-lg-10">
-          <div class="back"><img src="./assets/icons/collection_back2.png" alt="back"></div>
+          <div class="back"><img src="./assets/icons/collection_back2.png" alt="back" id="back"></div>
           <div class="collection_input_wrap">
             <div>
               <label for="title">Title</label>
@@ -98,7 +93,7 @@
             </div>
             <div>
               <label for="category">Category</label>
-              <input type="text" name="category" disabled="true" value="test">
+              <input type="text" name="category" disabled="true" value="test" id="input_category">
             </div>
             <div>
               <label for="url">URL</label>
@@ -123,6 +118,7 @@
 
   <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="./music.js"></script>
+  <script src="./collection.js"></script>
 </body>
 
 </html>

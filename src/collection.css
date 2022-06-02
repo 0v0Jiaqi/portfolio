@@ -1,6 +1,16 @@
 .clicked {
   color: #e94958 !important;
 }
+a {
+  color: #000;
+}
+a:hover {
+  color: #666;
+}
+.copy,
+.copy3 {
+  display: none !important;
+}
 @media screen and (max-width: 720px) {
   .collection_wrap {
     padding-top: 10px;
@@ -41,6 +51,14 @@
 .collection_wrap .category_wrap .category_list li {
   padding-top: 10px;
   color: #fff;
+  cursor: pointer;
+}
+.collection_wrap .category_wrap .category_list li h4 {
+  font-size: 16px;
+}
+.collection_wrap .category_wrap .category_list li input {
+  width: 100%;
+  max-width: 100px;
 }
 .collection_wrap .category_wrap .category_add {
   height: 30px;
