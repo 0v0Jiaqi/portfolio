@@ -201,9 +201,44 @@
   background-image: url(assets/icons/clock/setting.png);
 }
 .clock_wrap .clock .time_setting {
-  display: none;
   position: absolute;
-  background-color: blue;
+  background-color: #ffb6a7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 10px auto 0;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+}
+@media screen and (max-width: 720px) {
+  .clock_wrap .clock .time_setting {
+    padding: 10px;
+    margin-top: -3px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .clock_wrap .clock .time_setting {
+    padding: 20px;
+  }
+}
+.clock_wrap .clock .time_setting .clock_break_duration {
+  margin-top: 10px;
+}
+.clock_wrap .clock .time_setting .clock_duration_button_wrap {
+  margin-top: 10px;
+}
+.clock_wrap .clock .time_setting .clock_duration_button_wrap button {
+  border: 0;
+  border-radius: 5px;
+}
+.clock_wrap .clock .time_setting .clock_duration_button_wrap button:hover {
+  background-color: #fff;
+}
+.clock_wrap .clock .time_setting input {
+  width: 50px;
 }
 .clock_wrap .note_wrap {
   background-color: #ff927b;
@@ -225,9 +260,9 @@
 .clock_wrap .note_wrap .note_input textarea {
   border: none;
   outline: none;
-  /*边线不显示*/
+  /*Edges do not show*/
   resize: none;
-  /*禁止拉伸*/
+  /*No stretching*/
   height: 192px;
   appearance: none;
 }

@@ -9,7 +9,7 @@ let currentCategoryIndex = 0
 let collectionInput = document.querySelector(".collection_input_wrap")
 let isCollectionEdit = false
 
-// 添加新category事件
+// Add new category event
 document.querySelector("#category_add").onclick = function (e) {
   let categoryInput = document.querySelector(".copy").cloneNode(true)
   categoryInput.classList.remove("copy")
@@ -38,7 +38,7 @@ document.querySelector("#category_add").onclick = function (e) {
   }
 }
 
-// category列表点击事件
+// category list click event
 function categoryClick(node) {
   node.onclick = function (e) {
     // console.log(e.target)
@@ -55,7 +55,7 @@ function categoryClick(node) {
   }
 }
 
-// category初始化
+// category initialization
 function initCategory() {
   categoryList.forEach((item) => {
     let categoryDefault = document.querySelector(".copy2").cloneNode(true)
@@ -77,9 +77,9 @@ function initCategory() {
 }
 initCategory()
 
-/***********分界线 */
+/***********dividing line */
 
-// collection列表点击按钮时的事件，对其进行编辑/删除
+// Collection list event when the button is clicked to edit/delete it
 function collectionSetting(node) {
   node.onclick = function (e) {
     // console.log(e.target.closest(".collection_list"))
@@ -115,7 +115,7 @@ function collectionDelete(node) {
   }
 }
 
-// collection list初始化
+// collection list initialization
 function initCollection() {
   document.querySelector("#collection_list_add").onclick = function () {
     console.log("collection_list_add")
@@ -149,7 +149,7 @@ function initCollection() {
 }
 initCollection()
 
-// 添加一条collection
+// Add a collection
 function addCollection() {
   document.querySelector(".collection_save").onclick = function () {
     console.log("collection_save")
@@ -178,7 +178,7 @@ function addCollection() {
   }
 }
 
-// collection list初始化
+// collection list initialization
 function initCollectionList() {
   document.querySelectorAll(".collection_list").forEach((item) => {
     if (item.className === "collection_list") item.remove()

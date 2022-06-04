@@ -128,8 +128,18 @@
       <div class="row">
         <div class="col-lg-6 col-12">
           <div class="clock">
-            <div class="time_setting">
-              time setting
+            <div class="time_setting" style="display: none;">
+              <!-- time setting -->
+              <div class="clock_study_duration">
+                study duration: <input id="clock_study" type="number" value="25"> min
+              </div>
+              <div class="clock_break_duration">
+                break duration: <input id="clock_break" type="number" value="5"> min
+              </div>
+              <div class="clock_duration_button_wrap">
+                <button class="clock_duration_button_cancel">Cancel</button>
+                <button class="clock_duration_button_confirm" style="margin-left: 10px;">Confirm</button>
+              </div>
             </div>
             <div class="clock_time">
               25:00

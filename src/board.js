@@ -1,17 +1,17 @@
-let taskIndex = localStorage.getItem("taskIndex") || 0 // 卡片最大index值
+let taskIndex = localStorage.getItem("taskIndex") || 0 // Card maximum index value
 let taskList = JSON.parse(localStorage.getItem("taskList")) || [[], [], []]
 
 console.log(taskIndex, taskList)
 
-let clockTaskData = null // 时钟数据
+let clockTaskData = null // clock data
 let clockTextarea = document.querySelector(".note_input").querySelector("textarea") // notes
 
 /*****
- * 各种页面初始化
+ * Various page initializations
  * begin
  */
 
-// 页面初始化，根据localStorage储存的卡片数据进行渲染
+// Page initialization, rendering according to the card data stored in localStorage
 function initTaskList() {
   taskList.forEach((item, index) => {
     // console.log(item)
@@ -28,7 +28,7 @@ function initTaskList() {
 }
 initTaskList()
 
-// 卡片事件初始化（页面加载时的初始化,给每个卡片添加上对应的编辑/删除/双击事件）
+// Card event initialization (initialization when the page loads, add corresponding edit/delete/double-click events to each card)
 function initEvent() {
   // document.querySelectorAll("#task_list_done").forEach((item) => {
   //   initTaskDoneEvent(item)
@@ -50,11 +50,11 @@ function initEvent() {
 initEvent()
 
 /******
- * 各种页面初始化
+ * Various page initializations
  * end
  */
 
-// 添加新卡片,点击每一列中的加号时，会添加一张新的待编辑卡片，此处则对其进行实现
+// Add a new card, when you click the plus sign in each column, a new card to be edited will be added, which is implemented here
 document.querySelectorAll(".task_add_wrap").forEach((item) => {
   item.onclick = function (e) {
     console.log(e.target.closest(".task_wrap").querySelector(".task_list_wrap"))
@@ -73,11 +73,11 @@ document.querySelectorAll(".task_add_wrap").forEach((item) => {
 })
 
 /*******
- * 卡片确定/编辑/删除事件初始化
+ * Card confirmation/edit/delete event initialization
  * begin
  */
 
-// 数据 => 卡片：将taskList中的卡片数据渲染成卡片
+// Data => Card: Render the card data in the taskList into a card
 function dataToDoneTask(obj) {
   let newTaskDone = document.querySelector(".copy2").cloneNode(true)
   newTaskDone.classList.remove("copy2")
@@ -88,7 +88,7 @@ function dataToDoneTask(obj) {
   return newTaskDone
 }
 
-// 卡片确定事件函数 flag:是否为新卡片
+// Card determination event function flag: whether it is a new card
 function initTaskDoneEvent(node, flag = false) {
   // console.log(flag)
   node.onclick = function (e) {
@@ -110,8 +110,8 @@ function initTaskDoneEvent(node, flag = false) {
       notes: "",
     }
     console.log(obj)
-    // 判断是否填写完整
-    if (obj.name.trim() === "" || obj.date === "" || obj.time.hours === 0 || obj.time.minutes === 0) {
+    // Check if it is complete
+    if (obj.name.trim() === "" || obj.date === "" || (obj.time.hours === 0 && obj.time.minutes === 0)) {
       return
     }
     e.target.closest(".task_card_wrap").querySelector(".task_add_wrap").style.display = "block"
@@ -143,7 +143,7 @@ function initTaskDoneEvent(node, flag = false) {
   }
 }
 
-// 卡片编辑事件函数
+// Card edit event function
 function initTaskEditEvent(node) {
   node.onclick = function (e) {
     let currentTaskCardIndex = Number(e.target.closest(".task_wrap").querySelector(".task_card_index").innerHTML)
@@ -163,7 +163,7 @@ function initTaskEditEvent(node) {
   }
 }
 
-// 卡片删除事件函数 flag:是否为新卡片
+// Card deletion event function flag: whether it is a new card
 function initTaskDeleteEvent(node, flag = false) {
   // console.log(flag)
   node.onclick = function (e) {
@@ -187,41 +187,25 @@ function initTaskDeleteEvent(node, flag = false) {
 }
 
 /*******
- * 卡片确定/编辑/删除事件初始化
+ * Card confirmation/edit/delete event initialization
  * end
  */
 
 /******
- * 卡片拖拽
+ * card drag
  * begin
  */
 
-// 节点插入函数
+// Node Insertion Function
 function insertAfter(newNode, curNode) {
   curNode.parentNode.insertBefore(newNode, curNode.nextElementSibling)
 }
-
-// // 更新某一列卡片数据
-// function updateData(rowNum) {
-//   let taskWrap = document.querySelector(`.task_wrap${rowNum + 1}`)
-//   console.log(taskWrap)
-
-//   let arr = []
-//   // document.querySelectorAll('.task_list').forEach
-
-//   // for (let i = 0; i < taskList[currentTaskCardIndex].length; i++) {
-//   //   if (taskList[currentTaskCardIndex][i].id === currentTaskIndex) {
-//   //     taskList[currentTaskCardIndex].splice(i, 1)
-//   //     break
-//   //   }
-//   // }
-// }
 
 let draggedTask = null
 let dragOrigin = null
 let dragTarget = null
 
-// 卡片拖拽开始事件
+// Card drag start event
 document.querySelector(".card_wrap").ondragstart = function (e) {
   // console.log(e.target)
   draggedTask = e.target
@@ -229,78 +213,147 @@ document.querySelector(".card_wrap").ondragstart = function (e) {
   e.target.style.opacity = 0.5
 }
 
-// 卡片拖拽结束事件
+// Card drag end event
 document.querySelector(".card_wrap").ondragend = function (e) {
   // console.log(e.target)
   e.target.style.opacity = 1
 }
 
-// 阻止拖拽后卡片返回至原处
+// Prevent the card from returning to its original position after dragging
 function taskDragOver(node) {
   node.ondragover = function (e) {
     e.preventDefault()
   }
 }
 
-// 卡片拖拽过程中，移动卡片至目标处，对其进行添加与删除
+function updateData2() {
+  // let originNum = Number(draggedTask.querySelector(".task_index").innerHTML)
+  // let originRowNum = Number(dragOrigin.querySelector(".task_card_index").innerHTML)
+  // console.log(originNum, originRowNum, taskList)
+  // for (let i = 0; i < taskList[originRowNum].length; i++) {
+  //   if (taskList[originRowNum][i].id === originNum) {
+  //     taskList[originRowNum].splice(i, 1)
+  //     break
+  //   }
+  // }
+  // return
+
+  // let tempListArr = [...taskList[0], ...taskList[1], ...taskList[2]]
+  let tempListSet = []
+  let tempListArr = []
+  taskList.forEach((item) => {
+    item.forEach((item2) => {
+      tempListSet.push(JSON.stringify(item2))
+    })
+  })
+  Array.from(new Set(tempListSet)).forEach((item) => {
+    tempListArr.push(JSON.parse(item))
+  })
+  console.log(tempListArr)
+  // console.log(dragOrigin, dragTarget)
+  // console.log(tempListArr)
+
+  // Drag and drop update function: when the card drag is completed, update the two columns of card data dragged (new method)
+  // Update the data according to the DOM node, and solve the bug of data update failure when the drag event is not successfully triggered
+  function updateData(node) {
+    let rowNum = Number(node.querySelector(".task_card_index").innerHTML)
+    let rowArr = []
+    node.querySelectorAll(".task_index").forEach((item) => {
+      rowArr.push(Number(item.innerHTML))
+    })
+
+    // let tempListArr = [...taskList[0], ...taskList[1], ...taskList[2]]
+    console.log(node, rowNum, rowArr, tempListArr)
+
+    let temp = []
+    rowArr.forEach((item) => {
+      temp.push(tempListArr.find((item2) => item2.id === item))
+    })
+    // console.log(temp)
+    taskList[rowNum] = temp
+    // console.log(taskList)
+    localStorage.setItem("taskList", JSON.stringify(taskList))
+  }
+  updateData(dragOrigin)
+  updateData(dragTarget)
+}
+
+// During the card dragging process, move the card to the target, add and delete it
 function taskDropEnter(node) {
   node.ondragenter = function (e) {
     // console.log(e.target)
     dragTarget = e.target.closest(".task_wrap")
+    // return
 
     if (e.target.closest(".task_list")) {
       // console.log(e.target.closest(".task_list"))
       insertAfter(draggedTask, e.target.closest(".task_list"))
+      // updateData2()
     } else if (e.target.className === "task_list_wrap") {
-      console.log(e.target.querySelector(".task_list"), "?????")
+      // console.log(e.target.querySelector(".task_list"), "?????")
       e.target.insertBefore(draggedTask, e.target.querySelector(".task_list"))
+      // updateData2()
     }
   }
 }
 
-// 卡片拖拽结束时（鼠标松开），更新卡片数据至localStorage，保证卡片数据为最新的
+// When the card dragging ends (the mouse is released), update the card data to localStorage to ensure that the card data is the latest
 function taskDrag(node) {
   // node.ondrag = function (e) {
   //   // console.log(e.target)
   //   console.log(draggedTask, dragTarget)
   // }
   node.addEventListener("drop", function (e) {
+    e.preventDefault()
     console.log(dragOrigin, dragTarget)
+    updateData2()
 
-    // updateData(Number(dragOrigin.querySelector(".task_card_index").innerHTML))
-    // updateData(Number(dragTarget.querySelector(".task_card_index").innerHTML))
+    return
 
-    let arrTemp = []
-    let oldTaskCardIndex = Number(dragOrigin.querySelector(".task_card_index").innerHTML)
-    let oldTaskIndex = Number(draggedTask.querySelector(".task_index").innerHTML)
-    for (let i = 0; i < taskList[oldTaskCardIndex].length; i++) {
-      if (taskList[oldTaskCardIndex][i].id === oldTaskIndex) {
-        arrTemp = taskList[oldTaskCardIndex].splice(i, 1)[0]
-        console.log(arrTemp)
-        break
-      }
+    if (!e.target.closest(".task_list_wrap")) {
+      return
     }
 
-    let newTaskCardIndex = Number(dragTarget.querySelector(".task_card_index").innerHTML)
-    if (draggedTask.nextElementSibling) {
-      let newTaskIndex = Number(draggedTask.nextElementSibling.querySelector(".task_index").innerHTML)
-      for (let i = 0; i < taskList[newTaskCardIndex].length; i++) {
-        if (taskList[newTaskCardIndex][i].id === newTaskIndex) {
-          taskList[newTaskCardIndex].splice(i, 0, arrTemp)
-          break
-        }
-      }
-      // console.log(newTaskCardIndex, newTaskIndex, "???!!!")
-    } else {
-      taskList[newTaskCardIndex].push(arrTemp)
-    }
-
-    console.log(taskList)
-    localStorage.setItem("taskList", JSON.stringify(taskList))
+    updateDragData()
   })
 }
 
-// 卡片拖拽初始化
+/*
+
+// The data update function when the card is dragged (old method, there are bugs, discarded)
+function updateDragData() {
+  let arrTemp = []
+  let oldTaskCardIndex = Number(dragOrigin.querySelector(".task_card_index").innerHTML)
+  let oldTaskIndex = Number(draggedTask.querySelector(".task_index").innerHTML)
+  for (let i = 0; i < taskList[oldTaskCardIndex].length; i++) {
+    if (taskList[oldTaskCardIndex][i].id === oldTaskIndex) {
+      arrTemp = taskList[oldTaskCardIndex].splice(i, 1)[0]
+      console.log(arrTemp)
+      break
+    }
+  }
+
+  let newTaskCardIndex = Number(dragTarget.querySelector(".task_card_index").innerHTML)
+  if (draggedTask.nextElementSibling) {
+    let newTaskIndex = Number(draggedTask.nextElementSibling.querySelector(".task_index").innerHTML)
+    for (let i = 0; i < taskList[newTaskCardIndex].length; i++) {
+      if (taskList[newTaskCardIndex][i].id === newTaskIndex) {
+        taskList[newTaskCardIndex].splice(i, 0, arrTemp)
+        break
+      }
+    }
+    // console.log(newTaskCardIndex, newTaskIndex, "???!!!")
+  } else {
+    taskList[newTaskCardIndex].push(arrTemp)
+  }
+
+  console.log(taskList)
+  localStorage.setItem("taskList", JSON.stringify(taskList))
+}
+
+*/
+
+// Card drag and drop initialization
 function initDrag() {
   document.querySelectorAll(".task_card_wrap").forEach((item) => {
     taskDragOver(item)
@@ -311,11 +364,11 @@ function initDrag() {
 initDrag()
 
 /*****
- * 卡片拖拽
+ * card drag
  * end
  */
 
-// 卡片双击事件函数 => 跳转至时钟页面（将时钟显示，并隐藏卡片页面达到页面跳转的效果）
+// Card double-click event function => jump to the clock page (display the clock and hide the card page to achieve the effect of page jump)
 function initTaskDblClickEvent(node) {
   node.ondblclick = function (e) {
     console.log("double click", e.target.closest(".task_list"))
@@ -336,38 +389,43 @@ function initTaskDblClickEvent(node) {
 }
 
 /*******
- * 时钟页面
+ * clock page
  * begin
  */
 
-// 将时钟页面中的notes数据储存至对应卡片数据结构中
+// Store the notes data in the clock page into the corresponding card data structure
 clockTextarea.oninput = function () {
   // console.log(clockTaskData, "textarea")
   clockTaskData.notes = clockTextarea.value
   localStorage.setItem("taskList", JSON.stringify(taskList))
 }
 
-// 时钟返回至卡片页面
+// Clock returns to card page
 document.querySelector("#clock_back").onclick = function () {
   document.querySelector(".card_wrap").style.display = "block"
   document.querySelector(".clock_wrap").style.display = "none"
 }
 
 /******
- * 时钟页面
+ * clock page
  * end
  */
 
 /*****
- * 计时器
+ * timer
  * begin
  */
 
+let clockTime = document.querySelector(".clock_time")
 let time = null
 // let timePause = true
-let duration = 25 * 60
+let breakTime = 5
+let studyTime = 25
+// let duration = 25 * 60
+let duration = studyTime * 60
+let studyFlag = true
 
-let clockTime = document.querySelector(".clock_time")
+changeTime(duration)
 
 function formateTime(times) {
   let hours = Math.floor(times / 60)
@@ -377,7 +435,7 @@ function formateTime(times) {
     minutes,
   }
 }
-// 时间渲染
+// time rendering
 function changeTime(arg) {
   let temp = formateTime(arg)
   console.log(temp)
@@ -386,7 +444,7 @@ function changeTime(arg) {
   }`
 }
 
-// 时钟开始计时
+// clock starts
 document.querySelector(".clock_start").onclick = function (e) {
   console.log("clock_start clicked")
   if (duration === 0) {
@@ -398,7 +456,7 @@ document.querySelector(".clock_start").onclick = function (e) {
       if (duration === 0) {
         clearInterval(time)
         time = null
-        // document.querySelector("#reset_time").click()
+        document.querySelector(".clock_next").click()
         return
       }
       duration--
@@ -411,45 +469,47 @@ document.querySelector(".clock_start").onclick = function (e) {
   }
 }
 
-// document.querySelector("#reset_time").addEventListener("click", function () {
-//   intervalTimes++
-//   if (intervalTimes % (settingTime.interval * 2 + 2) === 0) {
-//     console.log("long break")
-//     document.querySelector("button[data-time='long_break']").click()
-//   } else if (intervalTimes % 2 === 1) {
-//     console.log("study")
-//     document.querySelector("button[data-time='study']").click()
-//   } else {
-//     console.log("short break")
-//     document.querySelector("button[data-time='short_break']").click()
-//   }
-// })
+// switch clock study/break
+document.querySelector(".clock_next").addEventListener("click", function () {
+  console.log("clock_next")
+  studyFlag = !studyFlag
+  if (studyFlag) {
+    duration = studyTime * 60
+  } else {
+    duration = breakTime * 60
+  }
+  changeTime(duration)
+  clearInterval(time)
+  document.querySelector(".clock_start").style.backgroundImage = "url(./assets/icons/clock/start.png)"
+  time = null
+  document.querySelector(".clock_start").click()
+  return
+})
 
-// // study/short break/long break 点击事件
-// document
-//   .querySelector(".timer_Buttons")
-//   .querySelectorAll("button")
-//   .forEach((item) => {
-//     item.onclick = function () {
-//       document
-//         .querySelector(".timer_Buttons")
-//         .querySelectorAll("button")
-//         .forEach((item2) => {
-//           item2.classList.remove("clicked")
-//         })
-//       item.classList.add("clicked")
-//       console.log(item.attributes["data-time"].value)
-//       duration = settingTime[item.attributes["data-time"].value] * 60
-//       changeTime(duration)
-//       clearInterval(time)
-//       document.querySelector("#start_time").classList.add("icon-bofang")
-//       document.querySelector("#start_time").classList.remove("icon-zanting")
-//       time = null
-//       document.querySelector("#start_time").click()
-//     }
-//   })
+// Clock set button event
+document.querySelector(".clock_setting").onclick = function (e) {
+  console.log("clock_setting")
+  document.querySelector("#clock_study").value = studyTime
+  document.querySelector("#clock_break").value = breakTime
+  let timeSetting = document.querySelector(".time_setting")
+  timeSetting.style.display = timeSetting.style.display === "none" ? "flex" : "none"
+}
+
+// Clock Settings -cancel
+document.querySelector(".clock_duration_button_cancel").onclick = function () {
+  document.querySelector(".clock_setting").click()
+}
+
+// Clock Settings -confirm
+document.querySelector(".clock_duration_button_confirm").onclick = function () {
+  studyTime = document.querySelector("#clock_study").value
+  breakTime = document.querySelector("#clock_break").value
+  document.querySelector(".clock_setting").click()
+  studyFlag = false
+  document.querySelector(".clock_next").click()
+}
 
 /*****
- * 计时器
+ * timer
  * end
  */

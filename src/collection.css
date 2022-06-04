@@ -174,9 +174,9 @@ a:hover {
 .collection_add_wrap .collection_input_wrap input {
   border: 1px solid #ccc;
   outline: none;
-  /*边线不显示*/
+  /*Edges do not show*/
   resize: none;
-  /*禁止拉伸*/
+  /*No stretching*/
   appearance: none;
   border-radius: 10px;
 }
