@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "In assessment2, I designed the prototype of the music player, the functions include: next song, previous song, replay, song title display bar, playlist.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0v0Jiaqi/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0v0Jiaqi/portfolio/issues"
+  },
+  "homepage": "https://github.com/0v0Jiaqi/portfolio#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
